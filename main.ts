@@ -223,7 +223,7 @@ namespace k_Bit {
     /**
      * set the rgb-led COULEUR via the color card
      */
-    //% block="set RGBled $col"
+    //% block="Mettre les LEDs à la couleur : $col"
     //% group="RGB-led" weight=78
     export function Led(col: COULEUR) {
         if (!PCA9685_Initialized) {
@@ -259,7 +259,7 @@ namespace k_Bit {
     /**
      * set the rgb-led color via data
      */
-    //% block=" set RGBled R:$red G:$green B:$blue"
+    //% block=" Mettre les leds à la couleur RGB -  R:$red G:$green B:$blue"
     //% red.min=0 red.max=255 green.min=0 green.max=255 blue.min=0 blue.max=255
     //% group="RGB-led" weight=77
     export function SetLed(red: number, green: number, blue: number) {
@@ -278,7 +278,7 @@ namespace k_Bit {
     /**
      * turn off all rgb-led
      */
-    //% block="turn off RGB-led"
+    //% block="eteindre les leds"
     //% group="RGB-led" weight=76
     export function OFFLed() {
         if (!PCA9685_Initialized) {
@@ -296,7 +296,7 @@ namespace k_Bit {
      */
     pins.setPull(DigitalPin.P2, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P11, PinPullMode.PullNone);
-    //% block="$LR obstacle sensor "
+    //% block="Détecteur d'osbtacle $LR "
     //% group="Sensor" weight=69
     export function obstacle(LR: MotorObs): number {
         let val;
@@ -315,7 +315,7 @@ namespace k_Bit {
      */
     pins.setPull(DigitalPin.P12, PinPullMode.PullNone);
     pins.setPull(DigitalPin.P13, PinPullMode.PullNone);
-    //% block="Line Tracking"
+    //% block="Suivre la ligne"
     //% group="Sensor" weight=68
     export function LineTracking(): number {
         let val = pins.digitalReadPin(DigitalPin.P12) << 0 | pins.digitalReadPin(DigitalPin.P13) << 1;
@@ -328,7 +328,7 @@ namespace k_Bit {
     const ECHO_PIN = DigitalPin.P15;
     pins.setPull(TRIG_PIN, PinPullMode.PullNone);
     let lastTime = 0;
-    //% block="Ultrasonic"
+    //% block="Capteur de distance Ultrason"
     //% group="Sensor" weight=67
     export function ultra(): number {
         //send trig pulse
@@ -356,7 +356,7 @@ namespace k_Bit {
     /**
      * photoresistance sensor
      */
-    //% block="photoresistor "
+    //% block="photoresistance "
     //% group="Sensor" weight=66
     export function PH(): number {
         return pins.analogReadPin(AnalogPin.P1);  
