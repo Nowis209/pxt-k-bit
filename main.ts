@@ -208,7 +208,7 @@ namespace k_Bit {
     }
     /////////////////////////////////////////////////////
     /**
-     * set rgb-led brightness
+     * changer la luminosité des LEDS
      */
     let L_brightness = 4095;  //control the rgb-led brightness
     //% block="LED luminosité: $br"
