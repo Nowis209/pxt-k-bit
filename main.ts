@@ -109,7 +109,7 @@ namespace k_Bit {
     /**
      * car run diretion
      */
-    //% block="voiture: marhe $direction à la vitesse de $speed \\%"
+    //% block="voiture: marche $direction à la vitesse de $speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Moteurs" weight=99
     export function run(direction: DIR, speed: number) {
@@ -211,7 +211,7 @@ namespace k_Bit {
      * set rgb-led brightness
      */
     let L_brightness = 4095;  //control the rgb-led brightness
-    //% block="LED brightness $br"
+    //% block="LED luminosité: $br"
     //% br.min=0 br.max=255
     //% group="RGB-led" weight=79
     export function LED_brightness(br: number) {
