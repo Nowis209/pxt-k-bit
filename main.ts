@@ -109,7 +109,7 @@ namespace k_Bit {
     /**
      * car run diretion
      */
-    //% block="voiture: $direction vitesse: $speed \\%"
+    //% block="voiture: marhe $direction à la vitesse de $speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Moteurs" weight=99
     export function run(direction: DIR, speed: number) {
