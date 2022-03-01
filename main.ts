@@ -1,40 +1,40 @@
 // keyestudio k-bit car for microbit
-// author: jieliang mo
+// author: jieliang mo french adaptation by Nowis209
 // github:https://github.com/mworkfun
 // Write the date: 2020-6-19
 
 /**
  * use for RGB-LED
  */
-enum COLOR {
-    red,
-    green,
-    blue,
-    white,
-    black
+enum COULEUR {  //COLOR
+    rouge,
+    vert,
+    bleu,
+    blanc,
+    noir
 }
 /**
  * use for control motor
  */
 enum DIR {
-    RunForward = 0,
-    RunBack = 1,
-    TurnLeft = 2,
-    TurnRight = 3
+    Avant = 0,
+    Arriere = 1,
+    Gauche = 2,
+    Droite = 3
 }
 /**
  * use for motor and infrared obstacle sensor
  */
 enum MotorObs {
-    LeftSide = 0,
-    RightSide = 1
+    Gauche = 0,
+    Droite = 1
 }
 enum MotorDir {
-    Forward = 0,
-    Back = 1
+    Avant = 0,
+    Arriere = 1
 }
 //% color="#ff6800" icon="\uf1b9" weight=15
-//% groups="['Motor', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
+//% groups="['Moteurs', 'RGB-led', 'Neo-pixel', 'Sensor', 'Tone']"
 namespace k_Bit {
     /**
      * use for control PCA9685
@@ -109,9 +109,9 @@ namespace k_Bit {
     /**
      * car run diretion
      */
-    //% block="car $direction speed: $speed \\%"
+    //% block="voiture: $direction vitesse: $speed \\%"
     //% speed.min=0 speed.max=100
-    //% group="Motor" weight=99
+    //% group="Moteurs" weight=99
     export function run(direction: DIR, speed: number) {
         if (!PCA9685_Initialized) {
             init_PCA9685();
@@ -148,8 +148,8 @@ namespace k_Bit {
     /**
      * set cat state
      */
-    //% block="car stop"
-    //% group="Motor" weight=98
+    //% block="arrêt voiture"
+    //% group="Moteurs" weight=98
     export function carStop() {
         if (!PCA9685_Initialized) {
         init_PCA9685();
@@ -160,9 +160,9 @@ namespace k_Bit {
     /**
      * set speed of motor
      */
-    //% block="$M motor run $MD speed: $speed \\%"
+    //% block="moteur $M marche $MD à la vitesse de $speed \\%"
     //% speed.min=0 speed.max=100
-    //% group="Motor" weight=97
+    //% group="Moteurs" weight=97
     export function Motor(M: MotorObs, MD: MotorDir, speed: number) {
         if (!PCA9685_Initialized) {
             init_PCA9685();
@@ -190,8 +190,8 @@ namespace k_Bit {
     /**
      * set motor state
      */
-    //% block="$M motor stop"
-    //% group="Motor" weight=96
+    //% block="Arret du moteur $M"
+    //% group="Moteurs" weight=96
     export function MotorSta(M: MotorObs) {
         if (!PCA9685_Initialized) {
             init_PCA9685();
@@ -221,36 +221,36 @@ namespace k_Bit {
         L_brightness = Math.map(br, 0, 255, 4095, 0);
     }
     /**
-     * set the rgb-led color via the color card
+     * set the rgb-led COULEUR via the color card
      */
     //% block="set RGBled $col"
     //% group="RGB-led" weight=78
-    export function Led(col: COLOR) {
+    export function Led(col: COULEUR) {
         if (!PCA9685_Initialized) {
             init_PCA9685();
         }
 
-        if (col == COLOR.red) {
+        if (col == COULEUR.rouge) {
             setPwm(5, 0, 4095);
             setPwm(6, 0, L_brightness);
             setPwm(4, 0, 4095);
             }
-        if (col == COLOR.green) {
+        if (col == COULEUR.vert) {
             setPwm(5, 0, L_brightness);
             setPwm(6, 0, 4095);
             setPwm(4, 0, 4095);
             }
-        if (col == COLOR.blue) {
+        if (col == COULEUR.bleu) {
             setPwm(5, 0, 4095);
             setPwm(6, 0, 4095);
             setPwm(4, 0, L_brightness);
             }
-        if (col == COLOR.white) {
+        if (col == COULEUR.blanc) {
             setPwm(5, 0, L_brightness);
             setPwm(6, 0, L_brightness);
             setPwm(4, 0, L_brightness);
         }
-        if (col == COLOR.black) {
+        if (col == COULEUR.noir) {
             setPwm(5, 0, 4095);
             setPwm(6, 0, 4095);
             setPwm(4, 0, 4095);
