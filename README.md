@@ -1,3 +1,6 @@
+French treaduction for : https://mworkfun.github.io/pxt-k-bit/
+
+ORIGINAL READ ME :
 
 > 在 [https://mworkfun.github.io/pxt-k-bit/](https://mworkfun.github.io/pxt-k-bit/) 打开此页面
 
